@@ -23,7 +23,7 @@ jobs:
 
       - name: Copy project files to server
         run: |
-          ssh -o StrictHostKeyChecking=no -i ${{ secrets.EC2_SSH_KEY }} ubuntu@${{ secrests.INSTANCE_IP }} << 'EOF'
+          ssh -o StrictHostKeyChecking=no -i ${{ secrets.EC2_SSH_KEY }} ubuntu@${{ env.INSTANCE_IP }} << 'EOF'
           cd /path/to/your/project
           git fetch --all
           git reset --hard origin/main
