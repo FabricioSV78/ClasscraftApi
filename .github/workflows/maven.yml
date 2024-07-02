@@ -24,7 +24,7 @@ jobs:
       - name: Copy project files to server
         run: |
           ssh -o StrictHostKeyChecking=no ubuntu@${{ secrets.EC2_HOST }} <<'EOF'
-          cd /path/to/your/project
+          cd /home/ubuntu/classcraft
           git fetch --all
           git reset --hard origin/main
           docker-compose down
